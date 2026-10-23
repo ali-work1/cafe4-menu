@@ -51,16 +51,112 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin:25px 0 30px}
 <footer>منوی دیجیتال کافه چهار</footer>
 </div>
 <script>
-const menuData=[
-{category:"نوشیدنی گرم با کافئین",icon:"☕",items:["اسپرسو","امریکانو","لاته","موکا","موکا با خامه","کاپوچینو کلاسیک","کورتادو","کارامل ماکیاتو","لاته نارگیل (شیر نارگیل)"].map(name=>({name,desc:"",price:"۱۰۰",image:""}))},
-{category:"نوشیدنی سرد با کافئین",icon:"🧊",items:["آیس اسپرسو","آیس امریکانو","آیس لاته","آیس موکا","آیس موکا با خامه","آیس کارامل ماکیاتو","آیس لاته نارگیل (شیر نارگیل)","تونیک","آفوگاتو"].map(name=>({name,desc:"",price:"۱۰۰",image:""}))},
-{category:"نوشیدنی گرم",icon:"🍫",items:["هات چاکلت کلاسیک","هات بیسکو","هات چاکلت فندق","وایت چاکلت","پینک چاکلت","نسکافه"].map(name=>({name,desc:"",price:"۱۰۰",image:""}))},
-{category:"نوشیدنی سرد",icon:"🥤",items:["آیس پینک نارگیل","آیس چاکلت","آئورا","فورچ","فور اِورا","شمس"].map(name=>({name,desc:"",price:"۱۰۰",image:""}))},
-{category:"شیک بار",icon:"🍓",items:["شیک توت فرنگی","شیک زعفران","شیک نسکافه","شیک شکلات","شیک اورِئو","شیک پینات","شیک نوتلا"].map(name=>({name,desc:"",price:"۱۰۰",image:""}))},
-{category:"ماکتیل ها",icon:"🍹",items:["موهیتو","رد موهیتو","لیموناد","بلو کوکونات","سیگنیچر باریستا"].map(name=>({name,desc:"",price:"۱۰۰",image:""}))},
-{category:"چای و دمنوش",icon:"🍵",items:["چای کلاسیک","چای معطر","چای سبز","چای ماسالا","چای ماسالا شکلاتی","چای کرک","گل گاو زبان","آویشن"].map(name=>({name,desc:"",price:"۱۰۰",image:""}))},
-{category:"کیک و دسر",icon:"🍰",items:["کیک شکلاتی","چیز کیک","تیرامیسو","دسر پتی بور","باقلوا"].map(name=>({name,desc:"",price:"۱۰۰",image:""}))}
+const menuData = [
+  {
+    category: "نوشیدنی گرم با کافئین",
+    icon: "☕",
+    items: [
+      {name:"اسپرسو", desc:"", price:"108 - 88", image:""},
+      {name:"امریکانو", desc:"", price:"113 - 93", image:""},
+      {name:"لاته", desc:"", price:"168 - 148", image:""},
+      {name:"موکا", desc:"", price:"188 - 168", image:""},
+      {name:"موکا با خامه", desc:"", price:"195 - 175", image:""},
+      {name:"کاپوچینو کلاسیک", desc:"", price:"158 - 138", image:""},
+      {name:"کورتادو", desc:"", price:"128 - 108", image:""},
+      {name:"کارامل ماکیاتو", desc:"", price:"198 - 178", image:""},
+      {name:"لاته نارگیل (شیر نارگیل)", desc:"", price:"178 - 158", image:""}
+    ]
+  },
+  {
+    category: "نوشیدنی سرد با کافئین",
+    icon: "🧊",
+    items: [
+      {name:"آیس اسپرسو", desc:"", price:"113 - 93", image:""},
+      {name:"آیس امریکانو", desc:"", price:"123 - 103", image:""},
+      {name:"آیس لاته", desc:"", price:"178 - 158", image:""},
+      {name:"آیس موکا", desc:"", price:"198 - 178", image:""},
+      {name:"آیس موکا با خامه", desc:"", price:"205 - 185", image:""},
+      {name:"آیس کارامل ماکیاتو", desc:"", price:"208 - 188", image:""},
+      {name:"آیس لاته نارگیل (شیر نارگیل)", desc:"", price:"188 - 168", image:""},
+      {name:"تونیک", desc:"", price:"148 - 128", image:""},
+      {name:"آفوگاتو", desc:"", price:"168 - 148", image:""}
+    ]
+  },
+  {
+    category: "نوشیدنی گرم",
+    icon: "🍫",
+    items: [
+      {name:"هات چاکلت کلاسیک", desc:"", price:"153", image:""},
+      {name:"هات بیسکو", desc:"", price:"163", image:""},
+      {name:"هات چاکلت فندق", desc:"", price:"163", image:""},
+      {name:"وایت چاکلت", desc:"", price:"153", image:""},
+      {name:"پینک چاکلت", desc:"", price:"153", image:""},
+      {name:"نسکافه", desc:"", price:"173", image:""}
+    ]
+  },
+  {
+    category: "نوشیدنی سرد",
+    icon: "🥤",
+    items: [
+      {name:"آیس پینک نارگیل", desc:"", price:"163", image:""},
+      {name:"آیس چاکلت", desc:"", price:"183", image:""},
+      {name:"آئورا", desc:"", price:"153", image:""},
+      {name:"فورچ", desc:"", price:"203", image:""},
+      {name:"فور اِورا", desc:"", price:"192", image:""},
+      {name:"شمس", desc:"", price:"-", image:""}
+    ]
+  },
+  {
+    category: "شیک بار",
+    icon: "🍓",
+    items: [
+      {name:"شیک توت فرنگی", desc:"", price:"203", image:""},
+      {name:"شیک زعفران", desc:"", price:"218", image:""},
+      {name:"شیک نسکافه", desc:"", price:"218", image:""},
+      {name:"شیک شکلات", desc:"", price:"193", image:""},
+      {name:"شیک اورِئو", desc:"", price:"203", image:""},
+      {name:"شیک پینات", desc:"", price:"213", image:""},
+      {name:"شیک نوتلا", desc:"", price:"213", image:""}
+    ]
+  },
+  {
+    category: "ماکتیل ها",
+    icon: "🍹",
+    items: [
+      {name:"موهیتو", desc:"", price:"178", image:""},
+      {name:"رد موهیتو", desc:"", price:"188", image:""},
+      {name:"لیموناد", desc:"", price:"168", image:""},
+      {name:"بلو کوکونات", desc:"", price:"188", image:""},
+      {name:"سیگنیچر باریستا", desc:"", price:"—", image:""}
+    ]
+  },
+  {
+    category: "چای و دمنوش",
+    icon: "🍵",
+    items: [
+      {name:"چای کلاسیک", desc:"", price:"88", image:""},
+      {name:"چای معطر", desc:"", price:"98", image:""},
+      {name:"چای سبز", desc:"", price:"118", image:""},
+      {name:"چای ماسالا", desc:"", price:"153", image:""},
+      {name:"چای ماسالا شکلاتی", desc:"", price:"163", image:""},
+      {name:"چای کرک", desc:"", price:"173", image:""},
+      {name:"گل گاو زبان", desc:"", price:"98", image:""},
+      {name:"آویشن", desc:"", price:"98", image:""}
+    ]
+  },
+  {
+    category: "کیک و دسر",
+    icon: "🍰",
+    items: [
+      {name:"کیک شکلاتی", desc:"", price:"—", image:""},
+      {name:"چیز کیک", desc:"", price:"—", image:""},
+      {name:"تیرامیسو", desc:"", price:"—", image:""},
+      {name:"دسر پتی بور", desc:"", price:"—", image:""},
+      {name:"باقلوا", desc:"", price:"—", image:""}
+    ]
+  }
 ];
+
 const menu=document.getElementById("menu"),chips=document.getElementById("chips"),search=document.getElementById("search"),empty=document.getElementById("empty");
 function renderChips(){
  chips.innerHTML=`<button class="chip active" data-target="all">همه</button>`+menuData.map((s,i)=>`<button class="chip" data-target="s${i}">${s.icon} ${s.category}</button>`).join("");
